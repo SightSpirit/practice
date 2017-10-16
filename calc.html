@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		table {
+			border-collapse: collapse;
+		}
+		
+		input[type="button"] {
+			width: 100%;
+			text-align: center;
+			padding: 1px 4px; 
+		}
+	</style>
+	<script>
+		var memNum = 0;
+		var newNum = 0;
+		var eqPress = false;
+		var opPress = false;
+		var op = "";
+		
+		function getDisplay() {
+			return parseFloat(document.getElementById("display").value);
+		}
+	
+		function enter(digit) {
+			if (eqPress) {
+				document.getElementById("display").value = "";
+				eqPress = false;
+			}
+			document.getElementById("display").value += digit;
+		}
+		
+		function clr() {
+			document.getElementById("display").value = "";
+			memNum = 0;
+			op = "";
+		}
+	
+		function add(){
+			opPress ? memNum += getDisplay() : memNum = getDisplay();
+			document.getElementById("display").value = "";
+			op = "add";
+			opPress = true;
+		}
+		
+		function sub(){
+			opPress ? memNum -= getDisplay() : memNum = 0;
+			document.getElementById("display").value = "";
+			op = "sub";
+			opPress = true;
+		}
+		
+		function mult(){
+			opPress ? memNum *= getDisplay() : memNum = getDisplay();
+			document.getElementById("display").value = "";
+			op = "mult";
+			opPress = true;
+		}
+		
+		function div(){
+			opPress ? memNum /= getDisplay() : memNum = getDisplay();
+			document.getElementById("display").value = "";
+			op = "div";
+			opPress = true;
+		}
+		
+		function eval(){
+			newNum = getDisplay();
+			
+			switch (op) {
+				case "add":
+					memNum += newNum;
+					break;
+				case "sub":
+					memNum -= newNum;
+					break;
+				case "mult":
+					memNum *= newNum;
+					break;
+				case "div":
+					memNum /= newNum;
+					break;
+			}
+			
+			!opPress ? document.getElementById("display").value = 0 : document.getElementById("display").value = memNum.toString();
+			if (isNaN(memNum)) { document.getElementById("display").value = "ERR"};
+			eqPress = true;
+			opPress = false;
+			memNum = 0;
+			newNum = 0;
+			op = "";
+		}
+	</script>
+</head>
+<body>
+	<table border="2px">
+		<tr><th colspan="4">Calculator</th></tr>
+		<tr><th colspan="4"><input readonly type="text" id="display" /></th></tr>
+		<tr>
+			<td><input type="button" value="7" onClick="enter('7');" /></td>
+			<td><input type="button" value="8" onClick="enter('8');" /></td>
+			<td><input type="button" value="9" onClick="enter('9');" /></td>
+			<td><input type="button" value="+" onClick="add();" /></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="4" onClick="enter('4');" /></td>
+			<td><input type="button" value="5" onClick="enter('5');" /></td>
+			<td><input type="button" value="6" onClick="enter('6');" /></td>
+			<td><input type="button" value="-" onClick="sub();" /></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="1" onClick="enter('1');" /></td>
+			<td><input type="button" value="2" onClick="enter('2');" /></td>
+			<td><input type="button" value="3" onClick="enter('3');" /></td>
+			<td><input type="button" value="*" onClick="mult();" /></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="C" onClick="clr();" /></td>
+			<td><input type="button" value="0" onClick="enter('0');" /></td>
+			<td><input type="button" value="." onClick="enter('.');" /></td>
+			<td><input type="button" value="/" onClick="div();" /></td>
+		</tr>
+		<tr>
+			<td colspan="4"><input type="button" value="=" onClick="eval();" /></td>
+		</tr>
+	</table>
+</body>
+</html>
