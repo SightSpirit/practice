@@ -1,0 +1,24 @@
+<html>
+<head>
+<script type="text/javascript">
+	var black = false;
+	
+	function color() {
+		return black ? "black" : "white";
+	}
+	
+	document.writeln("<table style=\"width: 500px; height: 500px;\">");
+	for (var i=1; i<9; i++) {
+		document.writeln("<tr>");
+		for (var j=1; j<9; j++) {
+			document.writeln("<td style=\"width:12.5%; height:12.5%; background-color:" + color() + ";\"></td>");
+			if (j!=8) black = black ? false : true;
+		}
+		document.writeln("</tr>");
+	}
+	document.write("</table>");
+</script>
+</head>
+<body>
+</body>
+</html>
