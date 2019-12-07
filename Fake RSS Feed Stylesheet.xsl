@@ -25,7 +25,7 @@
 		<body style="background-color:#f5f5b3;">
 			<xsl:for-each select="posts/post">
 				<div>
-					<xsl:if test="string-length(@image) &gt; 0"><img src="{image}" style="float:left; max-height:2em; width:auto;"/></xsl:if>
+					<xsl:if test="string-length(@image) &gt; 0"><img src="{image}" alt="{image}" style="float:left; max-height:2em; width:auto;"/></xsl:if>
 					<xsl:choose>
 					<xsl:when test="string-length(@title) &gt; 20">
 						<p class="fakelink"><xsl:value-of select="title"/></p>
