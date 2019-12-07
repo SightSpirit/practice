@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="https://raw.githubusercontent.com/SightSpirit/practice/master/Fake%20RSS%20Feed%20Stylesheet.xsl"?>
+
+<posts>
+<post>
+	<title>Maker Space Opens at Fargrove Branch</title>
+	<description>Fargrove Branch is pleased to announce a new maker space for 3D printing.</description>
+	<image>https://images.pexels.com/photos/6232/technology-3d-printer-printing.jpg</image>
+	<imgalt>3d printer</imgalt>
+</post>
+<post>
+	<title>YA Romance Book Club</title>
+	<description>Local sophomore Jamie Garcia has started a romance book club for teens aged 14 and up.</description>
+</post>
+<post>
+	<title>2020 Reading Olympics Lists</title>
+	<description>Eneco County IU has released the list of books for the 2020 Reading Olympics.</description>
+	<image>https://prodimage.images-bn.com/pimages/9780544336261_p0_v4_s550x406.jpg</image>
+	<imgalt>The Giver cover</imgalt>
+</post>
+</posts>
