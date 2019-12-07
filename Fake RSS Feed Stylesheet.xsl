@@ -25,21 +25,21 @@
 		<body style="background-color:#f5f5b3;">
 			<xsl:for-each select="posts/post">
 				<div>
-					<xsl:if test="string-length(@image) &gt; 0"><img src="{image}" alt="{image}" style="float:left; max-height:2em; width:auto;"/></xsl:if>
+					<xsl:if test="string-length(@image) &gt; 0"><img src="{image}" alt="{imgalt}" style="float:left; max-width:45px; max-height:2em; width:auto; height:auto;"/></xsl:if>
 					<xsl:choose>
-					<xsl:when test="string-length(@title) &lt; 21">
+					<xsl:when test="string-length(@title) &lt; 26">
 						<p class="fakelink"><xsl:value-of select="title"/></p>
 					</xsl:when>
 					<xsl:otherwise>
-						<p class="fakelink" title="{title}"><xsl:value-of select="concat(substring(title,1,20),&hellip;)"/></p>
+						<p class="fakelink" title="{title}"><xsl:value-of select="concat(substring(title,1,25),&hellip;)"/></p>
 					</xsl:otherwise>
 					</xsl:choose>
 					<xsl:choose>
-					<xsl:when test="string-length(@description) &lt; 31">
+					<xsl:when test="string-length(@description) &lt; 41">
 						<p><xsl:value-of select="description"/></p>
 					</xsl:when>
 					<xsl:otherwise>
-						<p><xsl:value-of select="concat(substring(description,1,30),&hellip;)"/></p>
+						<p><xsl:value-of select="concat(substring(description,1,40),&hellip;)"/></p>
 					</xsl:otherwise>
 					</xsl:choose>
 				</div>
