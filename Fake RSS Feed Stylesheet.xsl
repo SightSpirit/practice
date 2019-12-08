@@ -27,19 +27,19 @@
 				<div>
 					<xsl:if test="string-length(image) &gt; 0"><img src="{image}" alt="{imgalt}" style="float:left; max-width:45px; max-height:2em; width:auto; height:auto;"/></xsl:if>
 					<xsl:choose>
-					<xsl:when test="string-length(title) &lt; 26">
-						<p class="fakelink"><xsl:value-of select="title"/></p>
+					<xsl:when test="string-length(title) &lt; 41">
+						<span class="fakelink"> <xsl:value-of select="title"/></span><br/>
 					</xsl:when>
 					<xsl:otherwise>
-						<p class="fakelink" title="{title}"><xsl:value-of select="concat(substring(title,1,25),'…')"/></p>
+						<span class="fakelink" title="{title}"> <xsl:value-of select="concat(substring(title,1,40),'…')"/></span><br/>
 					</xsl:otherwise>
 					</xsl:choose>
 					<xsl:choose>
-					<xsl:when test="string-length(description) &lt; 41">
-						<p><xsl:value-of select="description"/></p>
+					<xsl:when test="string-length(description) &lt; 56">
+						<span><xsl:value-of select="description"/></span>
 					</xsl:when>
 					<xsl:otherwise>
-						<p><xsl:value-of select="concat(substring(description,1,40),'…')"/></p>
+						<span><xsl:value-of select="concat(substring(description,1,55),'…')"/></span>
 					</xsl:otherwise>
 					</xsl:choose>
 				</div>
