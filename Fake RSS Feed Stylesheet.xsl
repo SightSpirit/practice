@@ -32,7 +32,7 @@
 						<p class="fakelink"><xsl:value-of select="title"/></p>
 					</xsl:when>
 					<xsl:otherwise>
-						<p class="fakelink" title="{title}"><xsl:value-of select="concat(substring(title,1,25),&hellip;)"/></p>
+						<p class="fakelink" title="{title}"><xsl:value-of select="concat(substring(title,1,25),'…')"/></p>
 					</xsl:otherwise>
 					</xsl:choose>
 					<xsl:choose>
@@ -40,7 +40,7 @@
 						<p><xsl:value-of select="description"/></p>
 					</xsl:when>
 					<xsl:otherwise>
-						<p><xsl:value-of select="concat(substring(description,1,40),&hellip;)"/></p>
+						<p><xsl:value-of select="concat(substring(description,1,40),'…')"/></p>
 					</xsl:otherwise>
 					</xsl:choose>
 				</div>
