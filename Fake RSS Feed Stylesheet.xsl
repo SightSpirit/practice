@@ -26,9 +26,9 @@
 		<body style="background-color:#f5f5b3;">
 			<xsl:for-each select="posts/post">
 				<div>
-					<xsl:if test="string-length(@image) &gt; 0"><img src="{image}" alt="{imgalt}" style="float:left; max-width:45px; max-height:2em; width:auto; height:auto;"/></xsl:if>
+					<xsl:if test="string-length(image) &gt; 0"><img src="{image}" alt="{imgalt}" style="float:left; max-width:45px; max-height:2em; width:auto; height:auto;"/></xsl:if>
 					<xsl:choose>
-					<xsl:when test="string-length(@title) &lt; 26">
+					<xsl:when test="string-length(title) &lt; 26">
 						<p class="fakelink"><xsl:value-of select="title"/></p>
 					</xsl:when>
 					<xsl:otherwise>
@@ -36,7 +36,7 @@
 					</xsl:otherwise>
 					</xsl:choose>
 					<xsl:choose>
-					<xsl:when test="string-length(@description) &lt; 41">
+					<xsl:when test="string-length(description) &lt; 41">
 						<p><xsl:value-of select="description"/></p>
 					</xsl:when>
 					<xsl:otherwise>
